@@ -1,0 +1,18 @@
+<div class="navbar"><h1>Result</h1></div>
+
+  <% if @included %>
+    <% if @english %>
+      <p>Parabéns <strong><%= @word %></strong> é uma palavra válida.</p>
+    <% else %>
+      <p>Sinto muito <strong><%= @word %></strong> não é uma palavra válida.</p>
+    <% end %>
+  <% else %>
+    <p>Sinto muito mas a palavra <strong><%= @word %></strong> não pode ser construída com as letras <%= @letters.join(", ") %></p>
+  <% end %>
+
+<p><%= link_to 'Play again', new_path %></p>
+
+<%# # se a palavra inclui no dicionário americano escrever parabéns a palavra tal é válida
+# caso contrário sorry, mas n é uma palavra válida
+# e caso contrário verificar se a palavra pode ser construída com as letras usadas
+# @letters.join(", ") %>
